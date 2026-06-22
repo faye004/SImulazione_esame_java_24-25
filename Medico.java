@@ -33,10 +33,17 @@ public abstract class Medico {
         }
     }
 
-    /**
-     * Metodo che verrà sovrascritto (Overriding) dalle sottoclassi.
-     */
-    public abstract int getNumeroPazientiAssegnati();
+    public void assegnaPaziente(Paziente p) {
+        // Controllo del limite dei 20 pazienti 
+        if (this.pazientiAssegnati.size() >= 20) {
+            throw new LimitePazientiSuperatoException("Il medico ha già 20 pazienti in carico."); [cite: 28]
+        }
+        
+        // Evitiamo di aggiungere lo stesso paziente due volte
+        if (!this.pazientiAssegnati.contains(p)) {
+            this.pazientiAssegnati.add(p);
+        }
+    }
 
     @Override
     public String toString() {
