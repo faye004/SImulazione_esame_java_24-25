@@ -13,40 +13,25 @@ public abstract class Medico {
         this.nome = nome;
         this.cognome = cognome;
         this.specializzazione = specializzazione;
-        this.pazientiAssegnati = new ArrayList<>();
+        this.pazientiAssegnati = new ArrayList<>(); // Parte vuota
     }
 
-    public String getIdAlbo() { return idAlbo; }
-    public String getNome() { return nome; }
-    public String getCognome() { return cognome; }
-    public String getSpecializzazione() { return specializzazione; }
-
-    /**
-     * Assegna un paziente al medico nel rispetto del limite di 20 pazienti.
-     */
+    // Metodo per aggiungere un paziente al medico
     public void assegnaPaziente(Paziente p) {
+        // Controlliamo il limite dei 20 pazienti contemporaneamente [cite: 28]
         if (this.pazientiAssegnati.size() >= 20) {
-            throw new LimitePazientiSuperatoException("Il medico " + cognome + " ha già raggiunto il limite di 20 pazienti.");
-        }
-        if (!this.pazientiAssegnati.contains(p)) {
-            this.pazientiAssegnati.add(p);
-        }
-    }
-
-    public void assegnaPaziente(Paziente p) {
-        // Controllo del limite dei 20 pazienti 
-        if (this.pazientiAssegnati.size() >= 20) {
-            throw new LimitePazientiSuperatoException("Il medico ha già 20 pazienti in carico."); [cite: 28]
+            // Lanciamo l'eccezione personalizzata richiesta dal testo [cite: 28]
+            throw new LimitePazientiSuperatoException("Impossibile assegnare il paziente: limite massimo raggiunto.");
         }
         
-        // Evitiamo di aggiungere lo stesso paziente due volte
         if (!this.pazientiAssegnati.contains(p)) {
             this.pazientiAssegnati.add(p);
         }
     }
 
-    @Override
-    public String toString() {
-        return "[" + idAlbo + "] Dr. " + nome + " " + cognome + " - Spec: " + specializzazione;
+    public abstract int getNumeroPazientiAssegnati();
+
+    public String getIdAlbo() {
+        return idAlbo;
     }
 }
