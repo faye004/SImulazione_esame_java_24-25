@@ -1,10 +1,9 @@
 public class Diagnosi_con_prescrizione extends Diagnosi{
 
 	private String lista_farmaci;
-
-	@overloading
-	public Diagnosi_con_prescrizione(Paziente p, Medico m, String d, Strind date, String l) {
-		super(Paziente p, Medico m, String d, Strind date);
+	
+	public Diagnosi_con_prescrizione(Paziente p, Medico m, String d, String date, String l) {
+		super(p, m, d, date);
 		this.lista_farmaci = l;
 	}
 	
@@ -16,7 +15,7 @@ public class Diagnosi_con_prescrizione extends Diagnosi{
 		return lista_farmaci;
 	}
 	
-	@override
+	@Override
 	public String toString() {
 		return (super.toString() + "\nlista farmaci prescritti: " + lista_farmaci + ".");
 	}
