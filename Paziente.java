@@ -1,3 +1,4 @@
+
 import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
@@ -13,11 +14,11 @@ public class Paziente {
 	private List<Diagnosi> diagnosi ;
 	
 	public Paziente(String CodiceFiscale , String nome , String cognome , int eta , Diagnosi diagnosi) throws Exception{
-		if(!this.CodiceF.add(CodiceFiscale)) {
-			throw new IllegalArgumentException("ERROR");
-		}
 		if(CodiceFiscale == null || CodiceFiscale.isEmpty()) {
 			throw new Exception("ERROR");
+		}
+		if(!this.CodiceF.add(CodiceFiscale)) {
+			throw new IllegalArgumentException("ERROR");
 		}
 		this.CodiceFiscale = CodiceFiscale ; 
 		this.nome = nome ;
@@ -80,9 +81,5 @@ public class Paziente {
 	public void setDiagnosi(List<Diagnosi> diagnosi) {
 		this.diagnosi = diagnosi;
 	}
-	
-	
-	
-	
 	
 }
