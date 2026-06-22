@@ -1,3 +1,5 @@
+package simulazione_esame_24_25;
+
 import java.util.*;
 
 /*Diagnosi:
@@ -12,24 +14,24 @@ o Utilizzare l'ereditarietà per rappresentare i due tipi di diagnosi.*/
 
 public class Diagnosi {
 	
-	protected Paziente piaziente;
+	protected Paziente paziente;
 	protected Medico medico;
 	protected String descrizione;
 	protected String data; // aaaa-mm-gg
 	
-	public Diagnosi(Paziente p, Medico m, String d, Strind date) {
-		this.piaziente = p;
+	public Diagnosi(Paziente p, Medico  m, String d, String date) {
+		this.paziente = p;
 		this.medico = m;
 		this.descrizione = d;
 		this.data = date;
 	}
 
 	public Paziente getPiaziente() {
-		return piaziente;
+		return paziente;
 	}
 
-	public void setPiaziente(Paziente piaziente) {
-		this.piaziente = piaziente;
+	public void setPiaziente(Paziente paziente) {
+		this.paziente = paziente;
 	}
 
 	public Medico getMedico() {
@@ -57,7 +59,7 @@ public class Diagnosi {
 	}
 	
 	public String toString() {
-		return ("Paziente: " + paziente.getNome + " " + paziente.getCognome + ";  CF: " + paziente.getCodiceFiscale() + "; \nmedico: " + medico.getNome + " " + medico.getCognome + ", codice identificativo: " + medico.getIdAlbo() + "\n data diagnosi: " + data + "\n descrizione: " + descrizione + ".");
+		return ("Paziente: " + paziente.getNome() + " " + paziente.getCognome() + ";  CF: " + paziente.getCodiceFiscale() + "; \nmedico: " + medico.getNome() + " " + medico.getCognome() + ", codice identificativo: " + medico.getIdAlbo() + "\n data diagnosi: " + data + "\n descrizione: " + descrizione + ".");
 	}
 	
 }
