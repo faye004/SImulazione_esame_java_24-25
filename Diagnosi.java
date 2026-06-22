@@ -1,5 +1,3 @@
-package simulazione_esame_24_25;
-
 import java.util.*;
 
 /*Diagnosi:
