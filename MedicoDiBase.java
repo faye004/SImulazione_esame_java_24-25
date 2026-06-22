@@ -1,5 +1,3 @@
-package simulazione_TDE_2;
-
 public class MedicoDiBase extends Medico {
     
     public MedicoDiBase(String idAlbo, String nome, String cognome) {
