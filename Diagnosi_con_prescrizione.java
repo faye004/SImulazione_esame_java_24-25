@@ -1,7 +1,8 @@
 public class Diagnosi_con_prescrizione extends Diagnosi{
 
 	private String lista_farmaci;
-	
+
+	@overloading
 	public Diagnosi_con_prescrizione(Paziente p, Medico m, String d, Strind date, String l) {
 		super(Paziente p, Medico m, String d, Strind date);
 		this.lista_farmaci = l;
