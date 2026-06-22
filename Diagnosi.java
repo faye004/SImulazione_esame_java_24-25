@@ -57,7 +57,7 @@ public class Diagnosi {
 	}
 	
 	public String toString() {
-		return ("Paziente: " + paziente.getNome + " " + paziente.getCognome + ";  CF: " + paziente.getCF() + "; \nmedico: " + medico.getNome + " " + medico.getCognome + ", codice identificativo: " + medico.getIdentificativo() + "\n data diagnosi: " + data + "\n descrizione: " + descrizione + ".");
+		return ("Paziente: " + paziente.getNome + " " + paziente.getCognome + ";  CF: " + paziente.getCodiceFiscale() + "; \nmedico: " + medico.getNome + " " + medico.getCognome + ", codice identificativo: " + medico.getIdAlbo() + "\n data diagnosi: " + data + "\n descrizione: " + descrizione + ".");
 	}
 	
 }
